@@ -6,6 +6,7 @@ export class MobileLibrary{
         private location :  string;
         private  mobiles : Mobile[];
         private totalPrice : number;
+        private precioSuma : number;
 
                 constructor(name,location,array) {
 
@@ -13,6 +14,7 @@ export class MobileLibrary{
                         this.location = location;
                         this.mobiles = array ;
                         this.totalPrice =0;
+                        this.precioSuma = this.totalPriceCalculation()
                 }
         
         //Metodos
@@ -51,7 +53,7 @@ export class MobileLibrary{
                 this.totalPrice = nuevoPrice
         }
 
-        totalPriceCalculation()
+        private totalPriceCalculation()
         {
                 let precioTotal = this.getPrice()
                 for (let i=0; i<this.mobiles.length; i++){
@@ -61,5 +63,16 @@ export class MobileLibrary{
                 }
         
                 return precioTotal
+        }
+        printLibrary()
+        {       console.log ("This is all my mobiles\n")
+
+                for(let i=0; i<this.mobiles.length;i++){
+                        console.log ("the characteristics of the mobile "+ this.mobiles[i].getName() + " are:\n"
+                         + "Name: " + this.mobiles[i].getName() + "\nModel: " + this.mobiles[i].getModel() + 
+                         "\nTrademark: " + this.mobiles[i].getMark() + "\nSD Size: " + this.mobiles[i].getSD() + "\nColor: " 
+                         + this.mobiles[i].getColor() + "\nIs 5G?: " + this.mobiles[i].get5G() + "\nNumber of Cameras: " + this.mobiles[i].getCamera() + "\n")
+                } 
+                console.log ("\nPrice overall: " + this.precioSuma)
         }
 }

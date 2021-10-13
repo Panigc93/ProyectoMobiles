@@ -43,6 +43,7 @@ var libreria = new MobileLibrary_1.MobileLibrary("tienda", "Madrid", todos);
 console.log(libreria.getLocation());
 console.log(libreria.getMobiles());
 console.log(libreria.getName());
-console.log(libreria.totalPriceCalculation());
+// console.log(libreria.totalPriceCalculation())
+libreria.printLibrary();
 // let moviles = libreria.getMobiles()
 // console.log(moviles[0].getPrice())
